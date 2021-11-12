@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
     char buffer[1024] = {0};
     char *hello = "Hello from server";
     char *user = "nobody";
-	struct passwd* pwd;
+    struct passwd* pwd;
     pid_t pid;
 
     // Creating socket file descriptor
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
         }
         setuid(pwd->pw_uid);
         valread = read(new_socket , buffer, 1024);
-		printf("Read %d bytes: %s\n", valread, buffer);
+	printf("Read %d bytes: %s\n", valread, buffer);
         send(new_socket , hello , strlen(hello) , 0);
         printf("Hello message sent\n");
         exit(0);
